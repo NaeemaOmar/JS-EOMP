@@ -1,0 +1,55 @@
+:root{
+    --mainAzureColor: #CCFAFE;
+    --darkTurquiseColor: #012225;
+    --darkerAzureColor: #63E4EE;
+    --purpleAccentColor: #8A83F9;
+    --white: #ffffff;
+}
+
+.darkerAzureBoxShadow{
+    box-shadow: 0px 0px 30px 10px var(--darkTurquiseColor);
+    /* 1st number = x-offset */
+    /* 2nd number = y-offset */
+    /* 3rd number =  how opaque blur gets*/
+    /* 4th number = how wide blur goes */
+}
+
+.darkTurquiseBg{
+    background-color: var(--darkTurquiseColor);
+}
+
+.darkTurquiseTxt{
+    color: var(--darkTurquiseColor);
+}
+
+.navBarBg{
+    background: linear-gradient(var(--darkerAzureColor), var(--mainAzureColor));
+}
+
+.footerBg{
+    background: linear-gradient(var(--mainAzureColor), var(--darkerAzureColor));
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.mainAzureBg{
+    background-color: var(--mainAzureColor);
+}
+
+.mainAzureTxt{
+    color: var(--mainAzureColor);
+}
+
+.sofiaText{
+    font-family: sofia;
+}
+
+.robotoText{
+    font-family: roboto;
+}
+
+.boldText{
+    font-weight: bolder;
+}
