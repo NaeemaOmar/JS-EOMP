@@ -7,6 +7,23 @@
     --white: #ffffff;
 }
 
+/* CONTACT + CHECKOUT PG GRADIENTS */
+.purpleNavBarBg{
+    background: linear-gradient(var(--mainAzureColor), var(--darkerAzureColor), var(--purpleAccentColor));
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 50;
+}
+
+.purpleFooter{
+    background: linear-gradient(var(--purpleAccentColor), var(--darkerAzureColor), var(--mainAzureColor));
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+/* END CONTACT + CHECKOUT PG GRADIENTS*/
 .btnHeight{
     height: 50px;
 }
@@ -40,15 +57,11 @@
 }
 
 .navBarBg{
-    background: linear-gradient(var(--darkerAzureColor), var(--mainAzureColor));
+    background: linear-gradient(var(--darkerAzureColor),  var(--mainAzureColor));
     width: 100%;
     position: fixed;
     left: 0;
     bottom: 50;
-}
-
-.fitWidthToContent{
-    max-width: fit-content;
 }
 
 .footerBg{
@@ -58,6 +71,10 @@
     bottom: 0;
     width: 100%;
 }
+.fitWidthToContent{
+    max-width: fit-content;
+}
+
 
 .mainAzureBg{
     background-color: var(--mainAzureColor);
