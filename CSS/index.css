@@ -1,17 +1,30 @@
+/* GENERAL STYLING */
 :root{
     --mainAzureColor: #CCFAFE;
-    --darkTurquiseColor: #012225;
+    --darkTurquiseColor: #023f45;
     --darkerAzureColor: #63E4EE;
     --purpleAccentColor: #8A83F9;
     --white: #ffffff;
 }
 
-.darkerAzureBoxShadow{
-    box-shadow: 0px 0px 30px 10px var(--darkTurquiseColor);
-    /* 1st number = x-offset */
-    /* 2nd number = y-offset */
-    /* 3rd number =  how opaque blur gets*/
-    /* 4th number = how wide blur goes */
+.btnHeight{
+    height: 50px;
+}
+
+.darkerAzureBg{
+    background-color: var(--darkerAzureColor);
+}
+
+.purpleAccentTxt{
+    color: var(--purpleAccentColor);
+}
+
+.purpleAccentBg{
+    background-color: var(--purpleAccentColor);
+}
+
+.noBorder{
+    border: none;
 }
 
 .darkTurquiseBg{
@@ -22,8 +35,20 @@
     color: var(--darkTurquiseColor);
 }
 
+.italicsTxt{
+    font-style: italic;
+}
+
 .navBarBg{
     background: linear-gradient(var(--darkerAzureColor), var(--mainAzureColor));
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 50;
+}
+
+.fitWidthToContent{
+    max-width: fit-content;
 }
 
 .footerBg{
@@ -53,3 +78,37 @@
 .boldText{
     font-weight: bolder;
 }
+
+
+/* LANDING PAGE */
+#landingPgPic{
+    max-width: 250px;
+    max-height: 300px;
+}
+
+.darkerAzureBoxShadow{
+    box-shadow: 0px 0px 30px 10px var(--darkerAzureColor);
+    /* 1st number = x-offset */
+    /* 2nd number = y-offset */
+    /* 3rd number =  how opaque blur gets*/
+    /* 4th number = how wide blur goes */
+}
+
+.purpleAccentBoxShadow{
+    box-shadow: 0px 0px 30px 10px var(--purpleAccentColor);
+    /* 1st number = x-offset */
+    /* 2nd number = y-offset */
+    /* 3rd number =  how opaque blur gets*/
+    /* 4th number = how wide blur goes */
+}
+
+
+/* ABOUT PAGE */
+.darkTurquiseBoxShadow{
+    box-shadow: 0px 0px 30px 10px var(--darkTurquiseColor);
+    /* 1st number = x-offset */
+    /* 2nd number = y-offset */
+    /* 3rd number =  how opaque blur gets*/
+    /* 4th number = how wide blur goes */
+}
+
