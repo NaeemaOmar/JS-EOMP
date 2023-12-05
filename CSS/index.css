@@ -6,6 +6,10 @@
     --purpleAccentColor: #8A83F9;
     --pinkAccentColor: #FED0CC;
     --babyPinkAccentColor: #ffb7ce;
+    /* --purpleAccentColor: #8A83F9; */
+    --purpleAccentColor: #FED0CC;
+    /*  */
+
     --white: #ffffff;
     --black: #000000;
 }
@@ -73,6 +77,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 50px;
 }
 .fitWidthToContent{
     max-width: fit-content;
