@@ -43,14 +43,41 @@
           </nav>
     </header>
     <main class="pt-5">
-        productPg
+        <h2 class="text-center robotoText">Our products</h2>
+        <div class="mt-5">
+          <p> `The first ID is ${product2.id}`</p>
+          <p>This is me trying to display a feature object from JS. It doesn't work</p>
+        </div>
+        <!-- The div below holds my sort button and my searchBar since I want them in 1 line -->
+        <div class="d-flex justify-content-between mx-3">
+          <div class="dropdown">
+            <!-- DropDown sort button: sort by price (low to high) + sort by price (high to low) + sort by type (bluetooth vs noise-canceling) -->
+            <button type="button" class="btn purpleAccentBg dropdown-toggle" data-bs-toggle="dropdown">Sort by:</button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"> <button id = "sortToHigh">sort by price </button> (low to high)</li>
+              <li class="dropdown-item">sort by price (high to low)</li>
+            </ul>
+          </div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 darkTurquiseBoxShadow" type="search" placeholder="Search product name" aria-label="Search">
+            <button class="btn btn-outline-success purpleAccentBg blackTxt" type="submit">Search</button>
+          </form>
+        </div>
+        <!-- Below is the div I'll be attaching my product-objects to -->
+        <div class="mt-5 row" id="productDisplayDiv">
+
+        </div>
+        
+        
     </main>
-    <footer class="footerBg">
+    <!-- <footer class="footerBg">
         <div class="d-flex justify-content-between">
           <p>SonicHarmony</p>
           <p>&copy NaeemaOmar 2023</p>
         </div>
-    </footer>
+    </footer> -->
     <script src="/Script/product.js"></script>
 </body>
 </html>
+
+

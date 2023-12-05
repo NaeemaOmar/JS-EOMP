@@ -4,7 +4,10 @@
     --darkTurquiseColor: #023f45;
     --darkerAzureColor: #63E4EE;
     --purpleAccentColor: #8A83F9;
+    --pinkAccentColor: #FED0CC;
+    --babyPinkAccentColor: #ffb7ce;
     --white: #ffffff;
+    --black: #000000;
 }
 
 /* CONTACT + CHECKOUT PG GRADIENTS */
@@ -84,6 +87,11 @@
     color: var(--mainAzureColor);
 }
 
+.blackTxt{
+    color: var(--black);
+}
+
+
 .sofiaText{
     font-family: sofia;
 }
@@ -129,3 +137,17 @@
     /* 4th number = how wide blur goes */
 }
 
+/* PRODUCT PAGE */
+.productImg{
+    max-width: 80px;
+}
+
+.createdDivWidth{
+    max-width: 270px;
+}
+
+.productBorder{
+    border-style: solid;
+    border-color: var(--darkerAzureColor);
+    border-width: 3px;
+}
