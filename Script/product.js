@@ -98,13 +98,14 @@ function displayProducts(a){
             <p>${product.description}</p>
             <p class="boldText">${product.price}</p>
             <div class="d-flex justify-content-center"></div>
-            <button class="purpleAccentBg mx-5 rounded-5" value="${index}">Add to cart</button>
+            <button class="purpleAccentBg mx-5 rounded-5" value="${product.id}">Add to cart</button>
         </div>
         `
     }) 
     productsDisplayDiv.innerHTML = displayedItem.join('');
     console.log(`This is the displayedItem array: ${displayedItem}`)
 }
+
 
 displayProducts(productsArrayFrLocalStorage); //Q: Why did I call this fx? A: So the products can actually display since lines 91 till line 108 only DEFINE the fx
 
@@ -128,7 +129,7 @@ function sortPriceToHigh(){
     // }
     displayProducts(tempArr);
 } 
-// The above code (line 111 to 123) doesn't work when i click the sort btn
+// ERROR TO BE FIXED: both of my sortPrice fx's permanently changes my display. Solution: like the searchBar event listener, define the sort fx w/in the event listener so that it is ONLY activated when the btn is clicked and the display returns to normal when the pg is refreshed
 // Step 5.2: declare variable to hold the btn DOM
 let sortToHighBtn = document.querySelector('#sortToHigh');
 
@@ -175,6 +176,21 @@ searchBtn.addEventListener('click', function(event){
 } );
 
 // STEP 6 ENDS HERE
+
+
+// STEP 7 STARTS HERE
+//Step 7.1.1: create an empty purchasedProductsArray
+let purchasedProductsArray =[];
+//Step 7.1.2: create an array holding the addtoCart btn's via querySelectorAll[value]
+let addToCartBtnsArray = document.querySelectorAll('[value]');
+addToCartBtnsArray.forEach((btn, index)=>{
+    btn.addEventListener('click', function(){
+        alert("This btn has an index of: " + index + " and therefore an id of: " + (index+1));
+    });
+});
+
+// ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted
+// STEP 7 ENDS HERE
 
 
 
