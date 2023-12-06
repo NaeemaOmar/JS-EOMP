@@ -55,14 +55,15 @@
             <button type="button" class="btn purpleAccentBg dropdown-toggle" data-bs-toggle="dropdown">Sort by:</button>
             <ul class="dropdown-menu">
               <li class="dropdown-item"> <button id = "sortToHigh">sort by price </button> (low to high)</li>
-              <li class="dropdown-item">sort by price (high to low)</li>
+              <li class="dropdown-item"> <button id="sortToLow"> sort by price</button> (high to low)</li>
             </ul>
           </div>
           <form class="d-flex" role="search">
-            <input class="form-control me-2 darkTurquiseBoxShadow" type="search" placeholder="Search product name" aria-label="Search">
-            <button class="btn btn-outline-success purpleAccentBg blackTxt" type="submit">Search</button>
+            <input class="form-control me-2 darkTurquiseBoxShadow" id="searchInput" type="search" placeholder="Search product name" aria-label="Search">
+            <button class="btn btn-outline-success purpleAccentBg blackTxt" id="searchBtn" type="submit">Search</button>
           </form>
         </div>
+        <p id="errorTag" class="text-center mt-3"></p>
         <!-- Below is the div I'll be attaching my product-objects to -->
         <div class="mt-5 row" id="productDisplayDiv">
 
