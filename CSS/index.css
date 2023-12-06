@@ -47,6 +47,10 @@
     background-color: var(--purpleAccentColor);
 }
 
+.softPinkBg{
+    background-color: var(--pinkAccentColor);
+}
+
 .noBorder{
     border: none;
 }
@@ -156,3 +160,20 @@
     border-color: var(--darkerAzureColor);
     border-width: 3px;
 }
+
+.mainHeadingText{
+    font-family: roboto;
+    font-weight: bolder;
+    color: var(--darkTurquiseColor);
+}
+
+.mainBtnStyling{
+    border: solid;
+    border-color: var(--pinkAccentColor);
+    box-shadow: 0px 0px 30px 10px var(--pinkAccentColor);
+}
+
+/* How to make a hoverFill for a button */
+/* .mainBtnStyling:hover{
+    background-color: var(--babyPinkAccentColor);
+} */
