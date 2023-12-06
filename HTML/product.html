@@ -13,29 +13,29 @@
     <header>
       <nav class="navbar navbar-expand-lg navBarBg">
         <div class="container-fluid">
-          <a class="navbar-brand sofiaText boldText darkTurquiseTxt" href="#">Sonic Harmony</a>
+          <a class="navbar-brand sofiaText boldText darkTurquiseTxt" href="/index.html">Sonic Harmony</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link darkTurquiseTxt robotoText" href="/HTML/about.html">About</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight" href="/HTML/about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link darkTurquiseTxt robotoText" href="/HTML/product.html">Products</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight active" href="/HTML/product.html">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link darkTurquiseTxt robotoText" href="/HTML/checkout.html">Checkout</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight" href="/HTML/checkout.html">Checkout</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link darkTurquiseTxt robotoText" href="/HTML/contact.html">Contact us</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight" href="/HTML/contact.html">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link darkTurquiseTxt robotoText" href="/HTML/admin.html">Admin</a>
+                <a class="nav-link darkTurquiseTxt robotoText navTextWeight" href="/HTML/admin.html">Admin</a>
               </li>
             </ul>
           </div>
@@ -43,24 +43,20 @@
       </nav>
     </header>
     <main class="pt-5">
-        <h2 class="text-center robotoText">Our products</h2>
-        <div class="mt-5">
-          <p> `The first ID is ${product2.id}`</p>
-          <p>This is me trying to display a feature object from JS. It doesn't work</p>
-        </div>
+        <h2 class="mainHeadingText text-center mt-5">Our products</h2>
         <!-- The div below holds my sort button and my searchBar since I want them in 1 line -->
-        <div class="d-flex justify-content-between mx-3">
+        <div class="d-flex justify-content-between mx-3 mt-5">
           <div class="dropdown">
             <!-- DropDown sort button: sort by price (low to high) + sort by price (high to low) + sort by type (bluetooth vs noise-canceling) -->
-            <button type="button" class="btn purpleAccentBg dropdown-toggle" data-bs-toggle="dropdown">Sort by:</button>
+            <button type="button" class=" softPinkBg rounded-5 noBorder mainBtnStyling btnHeight dropdown-toggle" data-bs-toggle="dropdown">Sort by:</button>
             <ul class="dropdown-menu">
-              <li class="dropdown-item"> <button id = "sortToHigh">sort by price </button> (low to high)</li>
-              <li class="dropdown-item"> <button id="sortToLow"> sort by price</button> (high to low)</li>
+              <li class="dropdown-item"> <button class="softPinkBg rounded-5 noBorder mainBtnStyling btnHeight" id = "sortToHigh">sort by price </button> (low to high)</li>
+              <li class="dropdown-item"> <button class="softPinkBg rounded-5 noBorder mainBtnStyling btnHeight" id="sortToLow"> sort by price</button> (high to low)</li>
             </ul>
           </div>
           <form class="d-flex" role="search">
             <input class="form-control me-2 darkTurquiseBoxShadow" id="searchInput" type="search" placeholder="Search product name" aria-label="Search">
-            <button class="btn btn-outline-success purpleAccentBg blackTxt" id="searchBtn" type="submit">Search</button>
+            <button class="btn softPinkBg rounded-5 noBorder mainBtnStyling btnHeight" id="searchBtn" type="submit">Search</button>
           </form>
         </div>
         <p id="errorTag" class="text-center mt-3"></p>
