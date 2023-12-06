@@ -98,10 +98,11 @@ function displayProducts(a){
             <p>${product.description}</p>
             <p class="boldText">${product.price}</p>
             <div class="d-flex justify-content-center"></div>
-            <button class="purpleAccentBg mx-5 rounded-5" value="${product.id}">Add to cart</button>
+            <button class="purpleAccentBg mx-5 rounded-5 add-to-cart" value="${product.id}" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
         </div>
         `
     }) 
+    // In the btn above w/ the onclick, It is necessary to stringify the product-object since in the fx where addToCart is defined, it is stored in localStorage as a string. If JSON.stringify is not used here, it causes the [object: Object] display error
     productsDisplayDiv.innerHTML = displayedItem.join('');
     console.log(`This is the displayedItem array: ${displayedItem}`)
 }
@@ -182,16 +183,22 @@ searchBtn.addEventListener('click', function(event){
 //Step 7.1.1: create an empty purchasedProductsArray
 let purchasedProductsArray =[];
 //Step 7.1.2: create an array holding the addtoCart btn's via querySelectorAll[value]
-let addToCartBtnsArray = document.querySelectorAll('[value]');
-addToCartBtnsArray.forEach((btn, index)=>{
-    btn.addEventListener('click', function(){
-        alert("This btn has an index of: " + index + " and therefore an id of: " + (index+1));
-    });
-});
+// let addToCartBtnsArray = document.querySelectorAll('[value]');
+// let addToCartBtnsArray = document.querySelectorAll('.add-to-cart');
+// addToCartBtnsArray.forEach((btn, index)=>{
+//     btn.addEventListener('click', function(){
+//         alert("This btn has an index of: " + index + " and therefore an id of: " + (index+1));
+//     });
+// });
+// ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted. SOLUTION FR JOEL: define a fx called addToCart and apply it to the product btn's via an onlcick attribute in the original display fx 
+function addToCart(item) {
+    if(item)
+        purchasedProductsArray.push(item)
+    localStorage.setItem('checkout', JSON.stringify(purchasedProductsArray))
 
-// ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted
+}
+
 // STEP 7 ENDS HERE
-
 
 
 // console.log(`Just me checking if the const keyword allows the displayedItem array to be called globally: ${displayedItem}`)
