@@ -7,15 +7,43 @@
 let adminProducts = [];
 adminProducts = JSON.parse(localStorage.getItem("productArray"));
 
-//Step 1.2: make a fx that creates a modal when the addNewProductBtn is clicked
-//Step 1.2.1: attach btn to a variable
-let addNewProductBtn = document.querySelector('#addNewProduct');
-//Step 1.2.2: attach eventListener to btn
-addNewProductBtn.addEventListener('click', ()=> addProductFx());
-//Step 1.2.3: define addProductFx
-function addProductFx(){
-    alert('Add new product btn was clicked');
-}
+//Step 1.2: add functionality to the html modal
+//NOTE: Since the process of creating a new product is entirely w/in the modal and triggered by the createNewProduct btn, the process needs to be w/in a fx
+//Step 1.2.2: attach createNewProductBtn to a variable and then attach a eventListener to that variable
+let createNewProductBtn = document.querySelector('#createNewProductBtn');
+createNewProductBtn.addEventListener('click', function(){
+    alert('The createNewProductBtn button was clicked');
+    //Step 1.2.1: attach each input to a variable
+    let newProductName = document.querySelector('#newProductName');
+    let newProductType = document.querySelector('#newProductType');
+    let newProductDescription = document.querySelector('#newProductDescription');
+    let newProductPrice = document.querySelector('#newProductPrice');
+    let newProductImageUrl = document.querySelector('#newProductImageUrl');
+    //Step 1.2.2.1: initialize a counter that is equal to adminProducts.length
+    let i = adminProducts.length;
+    //Step 1.2.2.2: create constructor fx to create a new product
+    function NewProduct(id, name, type, description, price, url){
+        this.id = id,
+        this.name = name,
+        this.type = type,
+        this.description = description,
+        this.price = price,
+        this.url = url
+    }
+    //Step 1.2.2.3: create new product by populating the constructor fx
+    let newProduct = new NewProduct(++i, newProductName.value, newProductType.value, newProductDescription.value, newProductPrice.value, newProductImageUrl.value);
+    console.log(newProduct);
+    //Step 1.2.2.4: push the new product to the adminProducts array
+    adminProducts.push(newProduct);
+    console.log(adminProducts);
+    localStorage.setItem('productArray', JSON.stringify(adminProducts));
+    })
+   
+
+
+
+
+
 
 // STEP 2 BEGINS HERE
 // STRUCTURE I WANT AT .html:
@@ -60,7 +88,7 @@ function displayProduct(a){
     // += acts like .appendChild in the sense that it adds to the bottom of whatever shows in the table
 }
 
-displayProduct(adminProducts)
+displayProduct(adminProducts);
 
 // STEP 2 ENDS HERE
 
