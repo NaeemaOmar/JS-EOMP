@@ -48,7 +48,9 @@ function ProductDetails(id, name, type, description, price, url){
 let idCounter = 0;
 
 // Step 2.2: declare the array that will store the product-objects
-let productsArray = [];
+let productsArray = JSON.parse(localStorage.getItem('productArray'))? JSON.parse(localStorage.getItem('productArray')) : [];
+// Q: WTF is happening in the above line? A: when i created my product pg, I did not have an array in local storage so I set my productsArray variable to an empty array, populated it after creating my default products and then saved the populated array in local storage. Then, when i got to my admin pg, i called the productsArray from local storage and added the user-created product therein. This created a problem for me because the product pg could not read from local storage since it started with an empty array. The solution to this, is to create a conditional statement in the product pg that checks IF local storage is empty or not. If its empty (false), the product page will create an empty array and then populate it BUT if local storage DOES have an array, it will call and use it accordingly.
+// UPDATE: the product pg now reflects the change in local storage BUT it still populates the localStorage w/ the newly created problems. THUS, i can either declare my products in the admin pg OR put the array population process in a function that is linked to the false statement of my ternary operator. Option 2 is too complicated and has plenty of room for errors so I'll go w/ option 1.
 
 // Step 3.1: create the 5 default product-objects
 let product1 = new ProductDetails(++idCounter, "First Product", "Noise-cancelling headphones", "EEG headphones that read your brainwaves to increase or decrease noise-cancellation", 2000, "https://i.postimg.cc/bvkZ2LCv/headphone5.jpg");
@@ -75,9 +77,9 @@ productsArray.push(product1, product2, product3, product4, product5);
 localStorage.setItem('productArray', JSON.stringify(productsArray)) //Q: WTF is this doing? A: .setItem first takes a key as its first parameter and then takes a stringified array as its 2nd parameter. JSON.stringify takes the object/array of objects that its turning into into string. Later, .getItems takes the KEY that was set in .setItems
 
 // Step 3.4: Get array fr localStorage and attach it to a variable
-let productsArrayFrLocalStorage = JSON.parse(localStorage.getItem('productArray'))
+let productsArrayFrLocalStorage = JSON.parse(localStorage.getItem('productArray'));
 // 
-console.log(productsArrayFrLocalStorage)
+console.log(productsArrayFrLocalStorage);
 
 // STEP 4 BEGINS HERE
 
