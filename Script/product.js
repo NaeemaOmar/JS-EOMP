@@ -43,6 +43,7 @@
 // Q: WTF is happening in the above line? A: when i created my product pg, I did not have an array in local storage so I set my productsArray variable to an empty array, populated it after creating my default products and then saved the populated array in local storage. Then, when i got to my admin pg, i called the productsArray from local storage and added the user-created product therein. This created a problem for me because the product pg could not read from local storage since it started with an empty array. The solution to this, is to create a conditional statement in the product pg that checks IF local storage is empty or not. If its empty (false), the product page will create an empty array and then populate it BUT if local storage DOES have an array, it will call and use it accordingly.
 // UPDATE: the product pg now reflects the change in local storage BUT it still populates the localStorage w/ the newly created problems. THUS, i can either declare my products in the admin pg OR put the array population process in a function that is linked to the false statement of my ternary operator. Option 2 is too complicated and has plenty of room for errors so I'll go w/ option 1.
 // UPDATE: I don't need this line anymore since I will be making my default products in the admin page
+//UPDATE: I went with option 1 so now my user-added products show on my product page but not on my admin pg meaning i need that conditional statement
 
 
 
