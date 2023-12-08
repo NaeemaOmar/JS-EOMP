@@ -76,6 +76,8 @@ createNewProductBtn.addEventListener('click', function(){
     adminProducts.push(newProduct);
     console.log(adminProducts);
     localStorage.setItem('productArray', JSON.stringify(adminProducts));
+    displayedArray = [newProduct];
+    displayProduct(displayedArray);
     })
    
 
