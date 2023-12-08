@@ -1,22 +1,6 @@
 // declaring variable to access display div
 let cartDisplayDiv = document.querySelector('#cartDisplayDiv');
 
-// Declare variable to hold payNow btn. 
-let payNowBtn = document.querySelector('#payNowBtn');
-
-// Attach functionality to payNowBtn. This button should clear checkout and create an alert
-payNowBtn.addEventListener('click', () => {
-    cartItemsArray = [];
-    localStorage.setItem( 'checkout', JSON.stringify(cartItemsArray));
-    alert("Thank you for your purchase. Please leave a review when you receive your products");
-    displayCartItems(cartItemsArray);
-})
-// payNowBtn.addEventListener('click', () => function(){{}
-//     // cartItemsArray = [];
-//     // localStorage.setItem(JSON.stringify('cartItemsArray'));
-//     alert("Thank you for your purchase. Please leave a review when you receive your products");
-// })
-
 // Declare variable to hold grand total
 let grandTotal = document.querySelector('#grandTotal');
 
@@ -36,7 +20,7 @@ function displayCartItems(a){
                 <td class="productBorder">${item.type}</td>
                 <td class="productBorder">${item.description}</td>
                 <td class="productBorder">${item.price}</td>
-                <td class="productBorder"><input type="number"></td>
+                <td class="productBorder"><input type="number" class="quantityInput"></td>
                 <td class="productBorder" id="productPriceTotal"></td>
             </tr>`
     })
@@ -45,6 +29,18 @@ function displayCartItems(a){
 
 displayCartItems(cartItemsArray);
 
-function calculateItemTotal(
-    
-)
+// Declare variable holding itemTotalPtag
+// let productPriceTotal = document.querySelector('#productPriceTotal');
+// function calculateItemTotal(){
+
+// }
+
+// Declare variable to hold payNow btn. 
+let payNowBtn = document.querySelector('#payNowBtn');
+
+// Attach functionality to payNowBtn. This button should clear checkout and create an alert
+payNowBtn.addEventListener('click', () => {
+    let empty = localStorage.setItem( 'checkout', JSON.stringify(""));
+    alert("Thank you for your purchase. Please leave a review when you receive your products");
+    displayCartItems(empty);
+})

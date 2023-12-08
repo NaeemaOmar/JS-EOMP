@@ -79,7 +79,7 @@
     height: 50px;
 }
 .fitWidthToContent{
-    max-width: fit-content;
+    min-width: fit-content;
 }
 
 
@@ -209,7 +209,6 @@
     margin-top: 100px;
     margin-inline-start: 20%;
 }
-
 .bottomRowMargin{
     margin-bottom: 100px;
     margin-top: 50px;
@@ -217,6 +216,12 @@
 }
 
 /* CONTACT PG ENDS HERE */
+
+/* CHECKOUT PG STARTS HERE */
+.quantityInput{
+    width: 50px;
+}
+/* CHECKOUT PG STARTS HERE */
 
 /* How to make a hoverFill for a button */
 /* .mainBtnStyling:hover{

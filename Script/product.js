@@ -27,7 +27,6 @@ function displayProducts(a){
     }) 
     // In the btn above w/ the onclick, It is necessary to stringify the product-object since in the fx where addToCart is defined, it is stored in localStorage as a string. If JSON.stringify is not used here, it causes the [object: Object] display error
     productsDisplayDiv.innerHTML = displayedItem.join('');
-    console.log(`This is the displayedItem array: ${displayedItem}`)
 }
 
 
@@ -107,35 +106,3 @@ function addToCart(item) {
 // ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted. SOLUTION FR JOEL: define a fx called addToCart and apply it to the product btn's via an onlcick attribute in the original display fx 
 
 // STEP 7 ENDS HERE
-
-
-// console.log(`Just me checking if the const keyword allows the displayedItem array to be called globally: ${displayedItem}`)
-
-// The fx below is my first properly functioning sortNdisplay fx. The problem is that it permanently changes the displayed products so that even after refreshing the pg, the products are still sorted by price.
-// function displaySortedArray(){
-//     productsArrayFrLocalStorage.sort((a, b) => {
-//         return a.price - b.price
-//     })
-//     console.log(`This is the sorted productsArrayFrLocalStorage ${productsArrayFrLocalStorage[0]}`)
-//     displayProducts();
-// }
-
-// The codeBlock below is the original display fx. I need to edit it so that it takes an array as a parameter so that i can use it to display my randomized array and then also display my sorted array when the sort btn is clicked
-// function displayProducts(){
-//     const displayedItem = productsArrayFrLocalStorage.map(
-//     function(product, index){
-//         return `
-//         <div class="productBorder createdDivWidth col-6 col-sm-4 col-md-3">
-//             <p class="text-center">${product.name}</p>
-//             <p>${product.type}</p>
-//             <img src="${product.url}" class="productImg rounded-5" alt="">
-//             <p>${product.description}</p>
-//             <p class="boldText">${product.price}</p>
-//             <div class="d-flex justify-content-center"></div>
-//             <button class="purpleAccentBg mx-5 rounded-5" value="${index}">Add to cart</button>
-//         </div>
-//         `
-//     }) 
-//     productsDisplayDiv.innerHTML = displayedItem.join('');
-//     console.log(`This is the displayedItem array: ${displayedItem}`)
-// }
