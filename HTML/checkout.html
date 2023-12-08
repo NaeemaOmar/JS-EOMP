@@ -46,9 +46,27 @@
     <main class="pt-5">
       <h2 class="sofiaText mainAzureTxt text-center container darkTurquiseBg darkTurquiseBoxShadow mt-5 fitWidthToContent rounded-3">Your cart</h2>
       <h5 class="sofiaText mainAzureTxt text-center container darkTurquiseBg darkTurquiseBoxShadow mb-5 fitWidthToContent rounded-3">Please ensure you change the quantity of each item as you see fit</h5>
-        <div class="mt-5 productBorder" id="cartDisplayDiv"></div>
+      <div class="container d-flex justify-content-end">
+        <button class="softPinkBg mainBtnStyling rounded-5" id="payNowBtn">Pay now</button>
+      </div>
+        <div class="mt-5 d-flex justify-content-center" id="cartDisplayDiv">
+          <table class="mt-5" id="cartTable">
+            <tr>
+              <th class="productBorder">Name</th>
+              <th class="productBorder">Image</th>
+              <th class="productBorder">Type</th>
+              <th class="productBorder">Description</th>
+              <th class="productBorder">Price</th>
+              <th class="productBorder">Quantity</th>
+              <th class="productBorder">Total</th>
+            </tr>
+          </table>
+        </div>
+        <div class="mb-5">
+          <h1 id="grandTotal"></h1>
+        </div>
     </main>
-    <footer class="footerBgGeneral">
+    <footer class="footerBgProductPg">
       <div class="d-flex justify-content-between">
           <p class="mt-auto">SonicHarmony</p>
           <p class="mt-3">&copy NaeemaOmar 2023</p>
