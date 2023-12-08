@@ -71,13 +71,10 @@ createNewProductBtn.addEventListener('click', function(){
     console.log(newProduct);
     //Step 1.2.2.4: push the new product to the adminProducts array
     adminProducts.push(newProduct);
-    console.log("This is an object in the adminProducts array" + adminProducts[5]);
-    // console.log("This is the last object in the adminProducts array" + adminProducts[(newProduct.id - 1)]);
-    // let tempArr = [adminProducts[-1]]
-    // console.log("This is the tempArr " + tempArr[0] )
-    // displayProduct(tempArr);
-    // console.log(adminProducts);
-    // localStorage.setItem('productArray', JSON.stringify(adminProducts));
+    console.log(adminProducts);
+    localStorage.setItem('productArray', JSON.stringify(adminProducts));
+    displayedArray = [newProduct];
+    displayProduct(displayedArray);
     })
     // NOTE: it is not redundant to have a constructor fx inside the above fx coz the first constructor fx is declared inside a conditional statement and therefore cannot be used outside of its code-block
 // END OF MODAL FUNCTIONALITY
