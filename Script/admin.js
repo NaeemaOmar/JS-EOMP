@@ -1,3 +1,12 @@
+// SPINNER STARTS HERE
+{/* <div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div> */}
+// SPINNER STARTS HERE
+
+
 // Step 1.1: create variable to call and hold product-objects fr localStorage. if local storage is empty, empty array is declared
 let adminProducts = JSON.parse(localStorage.getItem('productArray')) ? JSON.parse(localStorage.getItem('productArray')) : [];
 
@@ -106,3 +115,7 @@ function displayProduct(a){
 displayProduct(adminProducts);
 
 // END OF PRODUCT DISPLAY
+
+// START OF EDIT MODAL
+
+// END OF EDIT MODAL

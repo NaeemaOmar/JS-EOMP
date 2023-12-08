@@ -222,3 +222,8 @@
 /* .mainBtnStyling:hover{
     background-color: var(--babyPinkAccentColor);
 } */
+
+/* SPINNER */
+#spinner{
+    animation: spin 2s linear infinite;
+}

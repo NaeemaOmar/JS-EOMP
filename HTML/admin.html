@@ -51,25 +51,66 @@
   Add new product
 </button>
 
-<!-- Modal -->
+<!--addNewProduct Modal starts here -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Please enter the following details for the new product</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Name</p>
+              <input type="text" name="name" id="newProductName">
+              <p>Type</p>
+              <input type="text" name="type" id="newProductType">
+              <p>Description</p>
+              <input type="text" name="description" id="newProductDescription">
+              <p>Price</p>
+              <input type="number" name="price" id="newProductPrice">
+              <p>Image url</p>
+              <input type="text" name="imageUrl" id="newProductImageUrl">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn mainBtnStyling rounded-5 softPinkBg mt-5" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="createNewProductBtn" class="btn mainBtnStyling rounded-5 softPinkBg mt-5">Create new product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--addNewProduct Modal ends here -->
+      <div class="mt-5" id="tableDiv">
+        <table>
+          <tr>
+            <th class="productBorder" id="number">Product number</th>
+            <th class="productBorder" id="name">Product name</th>
+            <th class="productBorder" id="type">Product type</th>
+            <th class="productBorder" id="description">Product description</th>
+            <th class="productBorder" id="image">Product image</th>
+            <th class="productBorder" id="price">Product price</th>
+          </tr>
+
+        </table>
+      </div>
+<!-- editProduct Modal starts here -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Please enter the following details for the new product</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Please enter the details you would like to change for this new product</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>Name</p>
-        <input type="text" name="name" id="newProductName">
+        <input type="text" name="name" id="editProductName">
         <p>Type</p>
-        <input type="text" name="type" id="newProductType">
+        <input type="text" name="type" id="editProductType">
         <p>Description</p>
-        <input type="text" name="description" id="newProductDescription">
+        <input type="text" name="description" id="editProductDescription">
         <p>Price</p>
-        <input type="number" name="price" id="newProductPrice">
+        <input type="number" name="price" id="editProductPrice">
         <p>Image url</p>
-        <input type="text" name="imageUrl" id="newProductImageUrl">
+        <input type="text" name="imageUrl" id="editProductImageUrl">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn mainBtnStyling rounded-5 softPinkBg mt-5" data-bs-dismiss="modal">Close</button>
@@ -78,20 +119,7 @@
     </div>
   </div>
 </div>
-        <div class="mt-5" id="tableDiv">
-          <table>
-            <tr>
-              <th class="productBorder" id="number">Product number</th>
-              <th class="productBorder" id="name">Product name</th>
-              <th class="productBorder" id="type">Product type</th>
-              <th class="productBorder" id="description">Product description</th>
-              <th class="productBorder" id="image">Product image</th>
-              <th class="productBorder" id="price">Product price</th>
-            </tr>
-
-          </table>
-          
-        </div>
+<!-- editProduct Modal ends here -->
     </main>
     <footer class="footerBgProductPg">
       <div class="d-flex justify-content-between">
