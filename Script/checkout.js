@@ -11,11 +11,6 @@ payNowBtn.addEventListener('click', () => {
     alert("Thank you for your purchase. Please leave a review when you receive your products");
     displayCartItems(cartItemsArray);
 })
-// payNowBtn.addEventListener('click', () => function(){{}
-//     // cartItemsArray = [];
-//     // localStorage.setItem(JSON.stringify('cartItemsArray'));
-//     alert("Thank you for your purchase. Please leave a review when you receive your products");
-// })
 
 // Declare variable to hold grand total
 let grandTotal = document.querySelector('#grandTotal');
@@ -44,7 +39,3 @@ function displayCartItems(a){
 }
 
 displayCartItems(cartItemsArray);
-
-function calculateItemTotal(
-    
-)

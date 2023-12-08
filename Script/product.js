@@ -1,3 +1,6 @@
+// SPINNER
+let spinner = document.querySelector('#spinner');
+
 // ERROR TO BE FIXED - referes to imperfections in the JS that I need to get back to
 
 // Get array fr localStorage and attach it to a variable.
