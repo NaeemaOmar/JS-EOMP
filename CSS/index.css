@@ -14,23 +14,6 @@
     --black: #000000;
 }
 
-/* CONTACT + CHECKOUT PG GRADIENTS */
-.purpleNavBarBg{
-    background: linear-gradient(var(--mainAzureColor), var(--darkerAzureColor), var(--purpleAccentColor));
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 50;
-}
-
-.purpleFooter{
-    background: linear-gradient(var(--purpleAccentColor), var(--darkerAzureColor), var(--mainAzureColor));
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-/* END CONTACT + CHECKOUT PG GRADIENTS*/
 .btnHeight{
     height: 50px;
 }
@@ -79,9 +62,17 @@
     bottom: 50;
 }
 
-.footerBg{
+.footerBgGeneral{
     background: linear-gradient(var(--mainAzureColor), var(--darkerAzureColor));
     position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+.footerBgProductPg{
+    background: linear-gradient(var(--mainAzureColor), var(--darkerAzureColor));
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -177,9 +168,55 @@
     box-shadow: 0px 0px 30px 10px var(--pinkAccentColor);
 }
 
+.pinkBoxShadow{
+    box-shadow: 0px 0px 30px 10px var(--pinkAccentColor);
+}
+
+.navBarZindex{
+    z-index: 1;
+}
+
+.sortBtnZindex{
+    z-index: -1;
+}
+
 .nav-link :active{
     text-decoration: underline;
 }
+
+/* CONTACT PG STARTS HERE */
+
+.marginLeft{
+    width: fit-content;
+    margin-left: 95%;
+}
+
+.inputWidth{
+    width: 100%;
+}
+
+.fixColumnWidth{
+    min-width: 250px;
+}
+
+
+.iconStyling{
+    color: var(--darkTurquiseColor);
+    box-shadow: 0px 0px 30px 10px var(--darkTurquiseColor);
+}
+
+.iconSpacing{
+    margin-top: 100px;
+    margin-inline-start: 20%;
+}
+
+.bottomRowMargin{
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-inline-start: 20%;
+}
+
+/* CONTACT PG ENDS HERE */
 
 /* How to make a hoverFill for a button */
 /* .mainBtnStyling:hover{

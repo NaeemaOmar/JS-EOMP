@@ -97,7 +97,7 @@ function displayProduct(a){
                     <td class="productBorder">${product.description}</td>
                     <td class="productBorder"> <img class="productImg" src="${product.url}"> </td>
                     <td class="productBorder">${product.price}</td>
-                    <td class="productBorder mx-3"><div class="d-flex"><button class="mainBtnStyling rounded-5 softPinkBg mx-3">Update</button> <button class="mainBtnStyling rounded-5 softPinkBg mx-3">Delete</button></div></td>
+                    <td class=" mx-3"><div class="d-flex"><button class="mainBtnStyling rounded-5 softPinkBg mx-3">Update</button> <button class="mainBtnStyling rounded-5 softPinkBg mx-3">Delete</button></div></td>
                 </tr>
             `
         }
