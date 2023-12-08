@@ -76,7 +76,7 @@ function displayProducts(a){
             <p>${product.description}</p>
             <p class="boldText">${product.price}</p>
             <div class="d-flex justify-content-center"></div>
-            <button class="purpleAccentBg mx-5 rounded-5 add-to-cart" value="${product.id}" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
+            <button class="mainBtnStyling softPinkBg mx-5 rounded-5 add-to-cart" value="${product.id}" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
         </div>
         `
     }) 
