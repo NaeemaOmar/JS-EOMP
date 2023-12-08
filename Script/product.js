@@ -1,82 +1,27 @@
 // ERROR TO BE FIXED - referes to imperfections in the JS that I need to get back to
-// Process begins in the product page. Constructor fx originates here, products are created and added to the products array. Products array is stored in local storage. Products array is then called in the admin page and then edited||deleted.
 
-// PseudoCode
-// Step 1: create constructor fx
-// Step 2.1: declare the array that will store the product-objects
-// Step 2.2: declare and initialize the counter that will act as the product id
-// Step 3.1: create the 5 default product-objects
-// Step 3.2: push the objects to the Array
-// Step 3.3: Store array into localStorage
-// Step 3.4: Get array fr localStorage and attach it to a variable
-// Step 4: create the fx to display the product-objects FROM the array
-// Step 4.1: declare a variable that links to the productDisplayDiv
-// Step 4.2: Loop through productsArray (using .map) and use the 'return' keyword to create a div holding the products how they're meant to be displayed
-// Step 5: add functionality to sort btn. Sort btn must call the localStorage array, .map through it take the product.price and then display the array.
-// Step 5.1: create sort fx that sorts the products by price
-// Step 5.2: declare variable to hold the btn DOM
-// Step 5.3: attach eventListener to the sortBtn
-// Step 5.4: click and hope it works
-// Q: How tf am I gonna do this? A: there are 4 in-built methods I can use in JS: 1).map, 2).reduce, 3).filter, 4).sort
-// .map: creates an array containing whatever is following the return keyword. Since .map contains a fx, I can edit ft's/components of the original array and then have those edited ft's returned. Ie, .map performs a certain action PER object in the array before returning a new sub-array WITHOUT EDITING THE ORIGINAL ARRAY
-// .filter loops through an array and returns ONLY the objects that meet a certain condition. EXAMPLE: if an array has 4 items and a condition of item.price>=500 is given, .filter will return a new array holding ONLY the objects whose .pric property is >=500. This is used in e-commerce sites when searching for products w/in a certain price range.
-// .reduce: while .map and .filter return arrays, .reduce returns a single value. .reduce loops through the array of objects, takes specified properties of each item of original array and then returns a single variable that holds the summation of whatever action was done to the specified properties eg, combining names, adding values, totalling price, etc.
-// .sort sorts an array by its characters. If an array is made of numbers, it will turn the number into strings and sort it accordingly. Eg, [1, 7, 13, 27] will become [1, 13, 27, 7] since they will be ordered according to the first character that appears and not according to their value. To overcome this, it is necessary to use a compare function w/in the sort. the compare fx will take 2 placeholder parameters (eg: a and b). 
-// Eg: arrayName.sort((a,b) => {return a-b}) THIS ARRANGES THE ARRAY IN ASCENDING ORDER. Q: why? A: since a is assumed to be bigger than b, a-b returns a +ve value which indicates ascending order
-// Eg: arrayName.sort((a,b) => {return b-a}) THIS ARRANGES THE ARRAY IN DESCENDING ORDER. Q: why? A: since a is assumed to be bigger than b, b-a returns a -ve value which indicates descending order
-// EXTREMELY NB TO NOTE: .sort PERMANENTLY alters the array so in the case of my sort btn, I CANNOT push the changes to the local storage and should instead save it into a new array to prevent the arrangement on the products and admin pg from being permanently changed
-// Step 5.1: use .map to loop through the array. For each array item, take the item.price and the index. 
-
-// 6.1) take searchInput.value 
-// 6.2.1) loop through array of products and check if the item.name.includes(searchInput.value)
-// 6.2.2) if it is included, push the item to a tempArray
-// 6.3) displayProducts(tempArr)
-// 6.4) attach searchBtn to a variable
-// 6.5) attach eventListener to the searchBtn
-
-
-
-
-
-// Step 2.2: declare the array that will store the product-objects
-// let productsArray = JSON.parse(localStorage.getItem('productArray'))? JSON.parse(localStorage.getItem('productArray')) : [];
-// Q: WTF is happening in the above line? A: when i created my product pg, I did not have an array in local storage so I set my productsArray variable to an empty array, populated it after creating my default products and then saved the populated array in local storage. Then, when i got to my admin pg, i called the productsArray from local storage and added the user-created product therein. This created a problem for me because the product pg could not read from local storage since it started with an empty array. The solution to this, is to create a conditional statement in the product pg that checks IF local storage is empty or not. If its empty (false), the product page will create an empty array and then populate it BUT if local storage DOES have an array, it will call and use it accordingly.
-// UPDATE: the product pg now reflects the change in local storage BUT it still populates the localStorage w/ the newly created problems. THUS, i can either declare my products in the admin pg OR put the array population process in a function that is linked to the false statement of my ternary operator. Option 2 is too complicated and has plenty of room for errors so I'll go w/ option 1.
-// UPDATE: I don't need this line anymore since I will be making my default products in the admin page
-//UPDATE: I went with option 1 so now my user-added products show on my product page but not on my admin pg meaning i need that conditional statement
-
-
-
-
-
-
-
-
-// Step 3.4: Get array fr localStorage and attach it to a variable
+// Get array fr localStorage and attach it to a variable.
 let productsArrayFrLocalStorage = JSON.parse(localStorage.getItem('productArray'));
 // 
 console.log(productsArrayFrLocalStorage);
 
-// STEP 4 BEGINS HERE
-
-// Step 4.1: declare a variable that links to the productDisplayDiv
+// Declare a variable that links to the productDisplayDiv
 let productsDisplayDiv = document.getElementById('productDisplayDiv');
 
-// Step 4.2: create a fx that loops through an array (that is takes as a parameter) using .map and then use the 'return' keyword to create a div holding the products how they're meant to be displayed
+// Create a fx that loops through an array (that is takes as a parameter) using .map and then use the 'return' keyword to create a div holding the products how they're meant to be displayed
 // NOTE: The following fx can be used to display the original products as well as the sorted products since it takes an array as its parameter
-// NOTE: the original version of this code is at the bottom of the pg
 function displayProducts(a){
     const displayedItem = a.map(
     function(product, index){
         return `
-        <div class="productBorder createdDivWidth col-6 col-sm-4 col-md-3">
+        <div class="productBorder createdDivWidth col-6 col-sm-4 col-md-3 mt-3 mx-1">
             <p class="text-center">${product.name}</p>
             <p>${product.type}</p>
             <img src="${product.url}" class="productImg rounded-5" alt="">
             <p>${product.description}</p>
             <p class="boldText">${product.price}</p>
             <div class="d-flex justify-content-center"></div>
-            <button class="mainBtnStyling softPinkBg mx-5 rounded-5 add-to-cart" value="${product.id}" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
+            <button class="mainBtnStyling softPinkBg mx-5 rounded-5" id = "toCartBtn" value="${product.id}" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
         </div>
         `
     }) 
@@ -86,38 +31,27 @@ function displayProducts(a){
 }
 
 
-displayProducts(productsArrayFrLocalStorage); //Q: Why did I call this fx? A: So the products can actually display since lines 91 till line 108 only DEFINE the fx
-
-// STEP 4 ENDS HERE
+displayProducts(productsArrayFrLocalStorage); //Q: Why did I call this fx? A: So the products can actually display since lines 13 till line 27 only DEFINE the fx
 
 
-// STEP 5 STARTS HERE
-// Step 5: add functionality to sort btn. Sort btn must call the localStorage array, .map through it take the product.price and then display the array.
-// Step 5.1: create sort fx that sorts the products by price
+// Add functionality to sort btn. Sort btn must call the localStorage array, .map through it take the product.price and then display the array.
 
-// The problem with this iteration of the sortFx is that even after refreshing, my products are displayed by price. To solve this, I will make the sortFx return an ARRAY and that array will be used as a prameter for the now generalized displayProducts fx in the eventListener
+// Create sort fx that sorts the products by price
 function sortPriceToHigh(){
     // firstly, sort the products array in ascending order. EXTREMELY NB to NOT use the setToLocalStorage fx so the original order shows once the pg is refreshed
     let tempArr = productsArrayFrLocalStorage.toSorted((a, b) => {
         return a.price - b.price
     })
-
-    // function showSortedArray(){
-        // I don't understand what I can do differently so the pg returns to its original state when it is refreshed
-        // SOLUTION: 1) edit the displayProducts fx so that it is allowed to take an array. 2) create a temporary array that has the value of productsArrayFrLocalStorage and then apply productsArrayFrLocalStorage.toSorted so that I have a sorted array w/out editing the localStorageArray. 3) apply displayProducts w/ the tempArray as it's parameter to override the original display. 4) instead of running the displayProducts(tempArr) fx in JS, attach it to a btn so that it is ONLY called when a btn is clicked
-    // }
     displayProducts(tempArr);
 } 
 // ERROR TO BE FIXED: both of my sortPrice fx's permanently changes my display. Solution: like the searchBar event listener, define the sort fx w/in the event listener so that it is ONLY activated when the btn is clicked and the display returns to normal when the pg is refreshed
-// Step 5.2: declare variable to hold the btn DOM
+// Declare variable to hold the btn DOM
 let sortToHighBtn = document.querySelector('#sortToHigh');
 
-// Step 5.3: attach eventListener to the sortBtn
+// Attach eventListener to the sortBtn
 sortToHighBtn.addEventListener('click', () => sortPriceToHigh());
-// since the above event listener didn't work for me, i've commented it as well as the sortPriceToHigh fx. NVM, i forgot to add () after calling the sortFx
 
-// Step 5.4: click and hope it works
-// Rinse and repeat steps 5.1 till 5.4 to get sortToLow btn w/ functionality
+// Rinse and repeat sortToHigh fx to get sortToLow btn w/ functionality
 function sortPriceToLow(){
     let tempArr = productsArrayFrLocalStorage.toSorted((a, b) => {
         return b.price - a.price
@@ -127,19 +61,18 @@ function sortPriceToLow(){
 
 let sortToLowBtn = document.querySelector('#sortToLow');
 sortToLowBtn.addEventListener('click', () => sortPriceToLow());
-// STEP 5 ENDS HERE
 
 
 // STEP 6 STARTS HERE
-// Step 6.1: take searchInput.value 
+// Take searchInput.value 
 let searchInput = document.querySelector('#searchInput');
 
-// Step 6.2: attach searchBtn and errorPtag to a variable
+// Attach searchBtn and errorPtag to a variable
 let searchBtn = document.querySelector('#searchBtn');
 let errorPtag = document.querySelector('#errorTag')
 errorPtag.textContent ="Ight, where are you errorPtag"
 
-// Step 6.3: create an event listener that defines its fx w/in the listener
+// Create an event listener that defines its fx w/in the listener
 searchBtn.addEventListener('click', function(event){
     event.preventDefault();
     let tempArr = [];
@@ -158,23 +91,20 @@ searchBtn.addEventListener('click', function(event){
 
 
 // STEP 7 STARTS HERE
-//Step 7.1.1: create an empty purchasedProductsArray
-let purchasedProductsArray =[];
-//Step 7.1.2: create an array holding the addtoCart btn's via querySelectorAll[value]
-// let addToCartBtnsArray = document.querySelectorAll('[value]');
-// let addToCartBtnsArray = document.querySelectorAll('.add-to-cart');
-// addToCartBtnsArray.forEach((btn, index)=>{
-//     btn.addEventListener('click', function(){
-//         alert("This btn has an index of: " + index + " and therefore an id of: " + (index+1));
-//     });
-// });
-// ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted. SOLUTION FR JOEL: define a fx called addToCart and apply it to the product btn's via an onlcick attribute in the original display fx 
+//Create an empty purchasedProductsArray
+let purchasedProductsArray = JSON.parse(localStorage.getItem('checkout')) ? JSON.parse(localStorage.getItem('checkout')) : [];
+// Declare variable to call addToCart btn
+let toCartBtn = document.querySelector('#toCartBtn');
 function addToCart(item) {
-    if(item)
+    if(item){
         purchasedProductsArray.push(item)
-    localStorage.setItem('checkout', JSON.stringify(purchasedProductsArray))
-
+        localStorage.setItem('checkout', JSON.stringify(purchasedProductsArray));
+        toCartBtn.disabled = true;
+        alert("You have added this item to your cart. Please choose the quantity you want at the checkout page.")
+    }
+        
 }
+// ERROR TO BE FIXED - addToCart btn doesn't work when the purchased items are sorted. SOLUTION FR JOEL: define a fx called addToCart and apply it to the product btn's via an onlcick attribute in the original display fx 
 
 // STEP 7 ENDS HERE
 
