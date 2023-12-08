@@ -72,8 +72,7 @@ let searchInput = document.querySelector('#searchInput');
 
 // Attach searchBtn and errorPtag to a variable
 let searchBtn = document.querySelector('#searchBtn');
-let errorPtag = document.querySelector('#errorTag')
-errorPtag.textContent ="Ight, where are you errorPtag"
+let errorPtag = document.querySelector('#errorTag');
 
 // Create an event listener that defines its fx w/in the listener
 searchBtn.addEventListener('click', function(event){
